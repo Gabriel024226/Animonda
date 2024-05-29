@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'TopNav';
+    src: url('../assets/The Last Shuriken.ttf') format('truetype');
+    src: url('../assets/The Last Shuriken.otf') format('opentype'); /* Specify the path to your .otf file */
+  }
+.TopNav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-family: 'TopNav',sans-serif;
+    background-color: #EE801E;
+    padding: 8px;
+    font-size: 25px;
+    width: 100%;
+    box-sizing: border-box;
+}
+div a {
+    padding: 13px;
+    text-decoration: none;
+    color: WHITE; /* Default color for the links */
+  }
+div a.active {
+    padding: 13px;
+    background-color: #E75B10 ;
+    font-weight: bold; /* Optionally, make the active option bold */
+  }
+.Pfp{
+    margin-top: -3px;
+    margin-right: 10px;
+    float: right;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+.menu{
+    font-size: 18px;
+    font-family: 'TopNav',sans-serif;
+    position: fixed;
+    top: 40px;
+    right: 10px; 
+    width: 80px; 
+    height: 104px;
+    background-color: #EF5C4E;
+    border: 1px solid white; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.menu a{
+  width: 80px;
+  padding: 9px;
+}
+.menu a:hover {
+  background-color: #de4234; /* Example background color on hover */
+  
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fad8ce;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup button {
+  margin-top: 10px;
+}
+.Form{
+
+  display: flex;
+  flex-direction: column;
+}
+.Form button {
+  color: white;
+  padding-top: 2px;
+  font-family: 'TopNav',sans-serif;
+  background-color: #EF5C4E;
+  border: 0px;
+  width: 50%;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Form button:hover {
+  padding-top: 2px;
+  font-family: 'TopNav',sans-serif;
+  background-color: #de4234;
+  border: 0px;
+}
+.popup-content button {
+  color: white;
+  padding-top: 2px;
+  font-family: 'TopNav',sans-serif;
+  background-color: #EF5C4E;
+  border: 0px;
+}
+.popup-content button:hover {
+  color: white;
+  padding-top: 2px;
+  font-family: 'TopNav',sans-serif;
+  background-color: #de4234;
+  border: 0px;
+}
+  
+  
