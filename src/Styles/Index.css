@@ -7,12 +7,12 @@
     position: fixed;
     top: 0;
     left: 0;
+    height: 6%;
     width: 100%;
     font-family: 'TopNav',sans-serif;
     background-color: #EE801E;
     padding: 8px;
     font-size: 25px;
-    width: 100%;
     box-sizing: border-box;
 }
 div a {
@@ -109,6 +109,16 @@ div a.active {
   font-family: 'TopNav',sans-serif;
   background-color: #de4234;
   border: 0px;
+}
+.contenido{
+  position: fixed;
+  top: 6%;
+  left: 0;
+  width: 100%;
+  font-family: 'TopNav',sans-serif;
+  background-color: #fad8ce;
+  font-size: 25px;
+  box-sizing: border-box;
 }
   
   
