@@ -14,6 +14,7 @@
     padding: 8px;
     font-size: 25px;
     box-sizing: border-box;
+    z-index: 10;
 }
 div a {
     padding: 13px;
@@ -22,6 +23,7 @@ div a {
   }
 div a.active {
     padding: 13px;
+    padding-bottom: 9px;
     background-color: #E75B10 ;
     font-weight: bold; /* Optionally, make the active option bold */
   }
@@ -34,13 +36,13 @@ div a.active {
     height: 35px;
 }
 .menu{
-    font-size: 18px;
+    font-size: 15px;
     font-family: 'TopNav',sans-serif;
     position: fixed;
     top: 40px;
     right: 10px; 
     width: 80px; 
-    height: 104px;
+    height: 108px;
     background-color: #EF5C4E;
     border: 1px solid white; 
     display: flex;
@@ -48,14 +50,16 @@ div a.active {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    z-index: 10;
 }
 .menu a{
+  margin-top: -9px;
   width: 80px;
   padding: 9px;
 }
 .menu a:hover {
   background-color: #de4234; /* Example background color on hover */
-  
+  padding: 5px;
 }
 .popup {
   position: fixed;
@@ -65,6 +69,7 @@ div a.active {
   background-color: #fad8ce;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 5;
 }
 
 .popup-content {
@@ -111,6 +116,7 @@ div a.active {
   border: 0px;
 }
 .contenido{
+  height: 100%;
   position: fixed;
   top: 6%;
   left: 0;
@@ -119,6 +125,9 @@ div a.active {
   background-color: #fad8ce;
   font-size: 25px;
   box-sizing: border-box;
+  z-index: 1;
+  max-height: 100vh; /* Adjust the height as needed */
+  overflow-y: auto;
 }
   
   

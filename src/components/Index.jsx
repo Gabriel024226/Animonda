@@ -7,6 +7,7 @@ import { Home } from './Home';
 import { Ofertas } from './Ofertas';
 import { Colecciones } from './Colecciones';
 import { Cart } from './Cart';
+import { Route, Routes } from 'react-router-dom';
 
 export const Index = () => {
   const [selectedOption, setSelectedOption] = useState('Home');
@@ -18,27 +19,28 @@ export const Index = () => {
   const toggleLoginPopup = () => setIsLoginOpen(!isLoginOpen);
   const toggleSignupPopup = () => setIsSignupOpen(!isSignupOpen);
 
-  let renderComponent;
-  switch (selectedOption) {
-    case 'Home':
-      renderComponent = <Home />;
-      break;
-    case 'Ofertas':
-      renderComponent = <Ofertas />;
-      break;
-    case 'Colecciones':
-      renderComponent = <Colecciones />;
-      break;
-    case 'Cart':
-      renderComponent = <Cart />;
-      break;
-    default:
-      renderComponent = <Home />;
-      break;
-  }
+  // let renderComponent;
+  // switch (selectedOption) {
+  //   case 'Home':
+  //     renderComponent = <Home />;
+  //     break;
+  //   case 'Ofertas':
+  //     renderComponent = <Ofertas />;
+  //     break;
+  //   case 'Colecciones':
+  //     renderComponent = <Colecciones />;
+  //     break;
+  //   case 'Cart':
+  //     renderComponent = <Cart />;
+  //     break;
+  //   default:
+  //     renderComponent = <Home />;
+  //     break;
+  // }
 
   return (
     <>
+    
       <TopNav
         selectedOption={selectedOption}
         handleOptionClick={handleOptionClick}
@@ -48,7 +50,13 @@ export const Index = () => {
         toggleSignupPopup={toggleSignupPopup}
       />
       <div className="contenido">
-        {renderComponent}
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/Ofertas' element={<Ofertas />}></Route>
+          <Route path='/Catalogo' element={<Colecciones />}></Route>
+          <Route path='/Carrito' element={<Cart />}></Route>
+          <Route path='/*' element={<Home />}></Route>
+        </Routes>
       </div>
       {isLoginOpen && <LoginPopup togglePopup={toggleLoginPopup} />}
       {isSignupOpen && <SignupPopup togglePopup={toggleSignupPopup} />}
