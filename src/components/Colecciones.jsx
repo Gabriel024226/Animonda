@@ -4,24 +4,35 @@ import axios from 'axios';
 
 export const Colecciones = () => {
   const [productos, setProductos] = useState([]);
+  const [searchKeyword, setSearchKeyword] = useState("");
 
   useEffect(() => {
     fetchProductos();
-  }, []);
+  }, [searchKeyword]);
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/inventario");
-      console.log(response.data);
+      const response = await axios.get(`http://localhost:8080/inventario/search`, {
+        params: { keyword: searchKeyword }
+      });
       setProductos(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
     }
   };
 
+  const handleSearchChange = (event) => {
+    setSearchKeyword(event.target.value);
+  };
+
   return (
     <>
-      <h1>Compras: </h1>
+      <input
+        type="text"
+        placeholder="Buscar productos"
+        value={searchKeyword}
+        onChange={handleSearchChange}
+      />
       <hr />
       {productos.map(producto => (
         <Card 
