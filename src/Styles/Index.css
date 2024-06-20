@@ -23,7 +23,7 @@ div a {
   }
 div a.active {
     padding: 13px;
-    padding-bottom: 9px;
+    padding-bottom: 6px;
     background-color: #E75B10 ;
     font-weight: bold; /* Optionally, make the active option bold */
   }

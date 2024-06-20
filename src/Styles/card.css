@@ -1,65 +1,84 @@
+/* Contenedor de tarjetas */
+.carrito {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 15px;
+}
+
+/* Estilos para cada tarjeta */
 .tarjeta {
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .tarjeta-imagen {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  
-  .tarjeta-contenido {
-    flex: 1;
-  }
-  
-  .tarjeta-titulo {
-    margin: 0;
-  }
-  
-  .tarjeta-descripcion {
-    margin: 0;
-    margin-bottom: 10px;
-  }
-  
-  .tarjeta-precio {
-    margin: 0;
-    font-weight: bold;
-  }
-  
-  .boton-agregar {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .boton-agregar:hover {
-    background-color: #45a049;
-  }
-  .boton-quitar {
-    background-color: #af4c4c;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .boton-quitar:hover {
-    background-color: #a04545;
-  }
-  
-  /* Estilos para el carrito */
-  .carrito {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar contenido horizontalmente */
+}
+
+/* Estilos para la imagen de la tarjeta */
+.tarjeta-imagen {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px; /* Añadido margen inferior */
+}
+
+/* Estilos para el contenido de la tarjeta */
+.tarjeta-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar contenido horizontalmente */
+}
+
+/* Estilos para el título de la tarjeta */
+.tarjeta-titulo {
+  margin: 0;
+  text-align: center; /* Centrar texto */
+  font-weight: bold;
+}
+
+/* Estilos para la descripción de la tarjeta */
+.tarjeta-descripcion {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: medium;
+}
+
+/* Estilos para el precio de la tarjeta */
+.tarjeta-precio {
+  margin: 0;
+  font-weight: bold;
+  text-align: center; /* Centrar texto */
+}
+
+/* Estilos para el botón agregar */
+.boton-agregar {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hover para el botón agregar */
+.boton-agregar:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para el botón quitar */
+.boton-quitar {
+  background-color: #af4c4c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hover para el botón quitar */
+.boton-quitar:hover {
+  background-color: #a04545;
+}

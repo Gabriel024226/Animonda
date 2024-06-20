@@ -8,6 +8,8 @@ import { Ofertas } from './Ofertas';
 import { Colecciones } from './Colecciones';
 import { Cart } from './Cart';
 import { Route, Routes } from 'react-router-dom';
+import { ProductosProvider } from "../context/ProductosProvider"
+import { CarritoProvider } from '../context/CarritoProvider';
 
 export const Index = () => {
   const [selectedOption, setSelectedOption] = useState('Home');
@@ -39,8 +41,8 @@ export const Index = () => {
   // }
 
   return (
-    <>
-    
+    <ProductosProvider>
+      <CarritoProvider>
       <TopNav
         selectedOption={selectedOption}
         handleOptionClick={handleOptionClick}
@@ -60,6 +62,7 @@ export const Index = () => {
       </div>
       {isLoginOpen && <LoginPopup togglePopup={toggleLoginPopup} />}
       {isSignupOpen && <SignupPopup togglePopup={toggleSignupPopup} />}
-    </>
+    </CarritoProvider>
+    </ProductosProvider>
   );
 };
