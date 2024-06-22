@@ -9,7 +9,7 @@ export const Cart = () => {
   useContext(CarritoContext)
   return (
     <>
-      <table class="table">
+      <table className="table">
         <thead class="table-dark">
         <tr>
             <th scope="col">Nombre</th>
@@ -21,9 +21,9 @@ export const Cart = () => {
         <tbody>
           {
             listaCompras.map(item => (
-              <tr key={item.id}>
-            <th scope="row">{item.title}</th>
-            <td>{item.price}</td>
+              <tr key={item.id_producto}>
+            <th scope="row">{item.nombre}</th>
+            <td>{item.precio}</td>
             <td><button type="button" className="btn btn-danger"
                 onClick={()=>eliminarCompra(item.id)}>
                   <RemoveShoppingCart />
@@ -32,12 +32,6 @@ export const Cart = () => {
           </tr>
             ))
           }
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
         </tbody>
       </table>
       <div className='d-grid gap-2'>

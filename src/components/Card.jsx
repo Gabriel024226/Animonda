@@ -6,10 +6,12 @@ export const Card = ({ imagen, titulo, descripcion, precio, handleAgregar,handle
 
     const [added, setAdded] = useState(false)
     const clickAgregar  = ()=>{
+        console.log("Intentando agregar al carrito");
         handleAgregar()
         setAdded(true)
     }
     const clickQuitar = ()=>{
+        console.log("Intentando quitar del carrito");
         handleQuitar()
         setAdded(false)
     }

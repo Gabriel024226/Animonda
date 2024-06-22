@@ -1,37 +1,30 @@
-import { ProductosContext} from "./ProductosContext";
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { ProductosContext } from './ProductosContext';
+import axios from 'axios';
+ 
 export const ProductosProvider = ({children}) => {
     const [productos, setProductos] = useState([]);
-  // const [searchKeyword, setSearchKeyword] = useState("");
 
-  
-  // useEffect(() => {
-  //   fetchProductos();
-  // }, [searchKeyWord]);
+    const fetchProductos = async () => {
+        try {
+            const response = await axios.get('http://localhost:8080/inventario', {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+            setProductos(response.data);
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    };
 
-  const fetchProductos = async () => {
-    const response = await fetch('https://fakestoreapi.com/products')
-    const data = await response.json()
-    console.log(data)
-    setProductos(data)
-}
-useEffect(() => {
-    fetchProductos();
-  }, [])
+    useEffect(() => {
+        fetchProductos();
+    }, []); // Depende de si necesitas re-fetch basado en alguna condición
 
-  // const fetchProductos = async () => {
-  //   try {
-  //     const response = await axios.get(`http://localhost:8080/inventario/search`, {
-  //       params: { keyword: searchKeyword }
-  //     });
-  //     setProductos(response.data);
-  //   } catch (error) {
-  //     console.error('Error fetching products:', error);
-  //   }
-  // };
     return (
-        <ProductosContext.Provider value={{productos}}>
+        <ProductosContext.Provider value={{ productos }}>
             {children}
         </ProductosContext.Provider>
-    )
-}
+    );
+};
