@@ -7,16 +7,14 @@ import { Home } from './Home';
 import { Colecciones } from './Colecciones';
 import { Cart } from './Cart';
 import { Route, Routes } from 'react-router-dom';
-import { ProductosProvider } from "../context/ProductosProvider"
+import { ProductosProvider } from "../context/ProductosProvider";
 import { CarritoProvider } from '../context/CarritoProvider';
+import '../axiosConfig';  // Asegúrate de que esta configuración se ejecuta para configurar Axios globalmente
 
 export const Index = () => {
-  const [selectedOption, setSelectedOption] = useState('Home');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSignupOpen, setIsSignupOpen] = useState(false);
 
-  const handleOptionClick = (option) => setSelectedOption(option);
   const toggleLoginPopup = () => setIsLoginOpen(!isLoginOpen);
   const toggleSignupPopup = () => setIsSignupOpen(!isSignupOpen);
   

@@ -2,6 +2,25 @@ import React from 'react';
 import '../Styles/Form.css'
 
 export const SignupPopup = ({ togglePopup }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:8080/auth/register', {
+        username,
+        password,
+        email
+      });
+      console.log('Registro exitoso', response.data);
+      localStorage.setItem('token', response.data.token);
+    } catch (error) {
+      console.error('Error:', error.response ? error.response.data : 'Unknown Error');
+    }
+  };
+
   return (
     <div class="login-container">
         <div class="circle blue"></div>

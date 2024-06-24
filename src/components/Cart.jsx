@@ -1,8 +1,7 @@
-import React from 'react';
-import { useContext } from 'react';
-import {CarritoContext} from "../context/CarritoContext"
-import '../Styles/card.css'
-import { RemoveShoppingCart, ShoppingCart } from "@mui/icons-material"
+import React, { useContext } from 'react';
+import { CarritoContext } from "../context/CarritoContext";
+import '../Styles/card.css';
+import { RemoveShoppingCart } from "@mui/icons-material";
 
 export const Cart = () => {
   const calcularTotal = () =>{
@@ -50,12 +49,10 @@ export const Cart = () => {
         </tbody>
       </table>
       <div className='d-grid gap-2'>
-        <button className="btn btn-primary" >
+        <button className="btn btn-primary">
           COMPRAR
         </button>
       </div>
-    
-    
     </>
-  )
+  );
 };
