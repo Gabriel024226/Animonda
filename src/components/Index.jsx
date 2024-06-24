@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import '../Styles/Index.css';
+import '../Styles/Background.css';
 import { TopNav } from './TopNav';
 import { LoginPopup } from './FormularioLogin';
 import { SignupPopup } from './SignupPopup';
 import { Home } from './Home';
-import { Ofertas } from './Ofertas';
 import { Colecciones } from './Colecciones';
 import { Cart } from './Cart';
 import { Route, Routes } from 'react-router-dom';
@@ -20,25 +19,7 @@ export const Index = () => {
   const handleOptionClick = (option) => setSelectedOption(option);
   const toggleLoginPopup = () => setIsLoginOpen(!isLoginOpen);
   const toggleSignupPopup = () => setIsSignupOpen(!isSignupOpen);
-
-  // let renderComponent;
-  // switch (selectedOption) {
-  //   case 'Home':
-  //     renderComponent = <Home />;
-  //     break;
-  //   case 'Ofertas':
-  //     renderComponent = <Ofertas />;
-  //     break;
-  //   case 'Colecciones':
-  //     renderComponent = <Colecciones />;
-  //     break;
-  //   case 'Cart':
-  //     renderComponent = <Cart />;
-  //     break;
-  //   default:
-  //     renderComponent = <Home />;
-  //     break;
-  // }
+  
 
   return (
     <ProductosProvider>
@@ -51,15 +32,31 @@ export const Index = () => {
         toggleLoginPopup={toggleLoginPopup}
         toggleSignupPopup={toggleSignupPopup}
       />
-      <div className="contenido">
+      <div className="context">
         <Routes>
           <Route path='/' element={<Home />}></Route>
-          <Route path='/Ofertas' element={<Ofertas />}></Route>
           <Route path='/Catalogo' element={<Colecciones />}></Route>
           <Route path='/Carrito' element={<Cart />}></Route>
           <Route path='/*' element={<Home />}></Route>
         </Routes>
       </div>
+      <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+            <img className="imgfondo1" src='src/Assets/pain.gif' alt="pain"></img>
+            <img className="imgfondo2" src='src/Assets/luffy.gif' alt="luffy"></img>
+      </div >
       {isLoginOpen && <LoginPopup togglePopup={toggleLoginPopup} />}
       {isSignupOpen && <SignupPopup togglePopup={toggleSignupPopup} />}
     </CarritoProvider>

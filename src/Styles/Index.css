@@ -3,131 +3,181 @@
     src: url('../assets/The Last Shuriken.ttf') format('truetype');
     src: url('../assets/The Last Shuriken.otf') format('opentype'); /* Specify the path to your .otf file */
   }
-.TopNav{
+  nav {
     position: fixed;
     top: 0;
     left: 0;
-    height: 6%;
+    right: 0;
     width: 100%;
-    font-family: 'TopNav',sans-serif;
-    background-color: #EE801E;
-    padding: 8px;
-    font-size: 25px;
-    box-sizing: border-box;
-    z-index: 10;
-}
-div a {
-    padding: 13px;
-    text-decoration: none;
-    color: WHITE; /* Default color for the links */
-  }
-div a.active {
-    padding: 13px;
-    padding-bottom: 6px;
-    background-color: #E75B10 ;
-    font-weight: bold; /* Optionally, make the active option bold */
-  }
-.Pfp{
-    margin-top: -3px;
-    margin-right: 10px;
-    float: right;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-}
-.menu{
-    font-size: 15px;
-    font-family: 'TopNav',sans-serif;
-    position: fixed;
-    top: 40px;
-    right: 10px; 
-    width: 80px; 
-    height: 108px;
-    background-color: #EF5C4E;
-    border: 1px solid white; 
+    height: 8%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    z-index: 10;
+    justify-content: left;
+    background-color: #363330;
+    padding: 10px 0;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+  
+  nav .Page {
+    position: relative;
+    width: auto;
+    display: inline-block;
+    margin: 0 10px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'TopNav', sans-serif;
+    font-weight: bold;
+    font-size: large;
+    padding: 10px 20px;
+    transition: color 0.2s ease;
+  }
+  
+  nav .Page:before,
+  nav .Page:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+  }
+  
+  nav .Page:before {
+    top: 0;
+    left: 8%;
+    width: 6px;
+    height: 6px;
+    background-color: currentColor;
+    transform: translateX(-50%) scale(0);
+  }
+  
+  nav .Page:after {
+    top: 10px;
+    left: 10%;
+    width: 4px;
+    height: 4px;
+    background-color: currentColor;
+    transform: translateX(-50%) scale(0);
+  }
+  
+  nav .Page:nth-child(1):before {
+    background-color: yellow;
+  }
+  
+  nav .Page:nth-child(1):after {
+    background-color: red;
+  }
+  
+  nav .Page:nth-child(2):before {
+    background-color: #00e2ff;
+  }
+  
+  nav .Page:nth-child(2):after {
+    background-color: #89ff00;
+  }
+  
+  nav .Page:nth-child(3):before {
+    background-color: purple;
+  }
+  
+  nav .Page:nth-child(3):after {
+    background-color: palevioletred;
+  }
+  
+  .indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 8%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: transform 0.3s ease, width 0.2s ease;
+  }
+  
+  nav .Page:hover {
+    color: #fff;
+  }
+  
+  nav .Page:hover:before,
+  nav .Page:hover:after {
+    transform: translateX(-50%) scale(1);
+  }
+  
+  nav .Page:nth-child(1):hover ~ .indicator {
+    transform: translateX(0%);
+    width: 8%;
+    background: linear-gradient(130deg, yellow, red);
+  }
+  
+  nav .Page:nth-child(2):hover ~ .indicator {
+    transform: translateX(90%);
+    width: 9%;
+    background: linear-gradient(130deg, #00e2ff, #89ff00);
+  }
+  
+  nav .Page:nth-child(3):hover ~ .indicator {
+    transform: translateX(175%);
+    width: 10%;
+    background: linear-gradient(130deg, purple, palevioletred);
+  }
+  
+  @media (max-width: 768px) {
+    nav .Page {
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+    
+    .indicator {
+      height: 2px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    nav .Page {
+      padding: 6px 5px;
+      font-size: 12px;
+    }
+  
+    .indicator {
+      height: 1px;
+    }
+  }
+
+  .imgfondo1 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    animation: moveLeftToRight 10s linear infinite;
 }
-.menu a{
-  margin-top: -9px;
-  width: 80px;
-  padding: 9px;
-}
-.menu a:hover {
-  background-color: #de4234; /* Example background color on hover */
-  padding: 5px;
-}
-.popup {
+.imgfondo2 {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fad8ce;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 5;
+  bottom: 0;
+  right: 0;
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  animation: mirrorRightToLeft 10s linear infinite;
+}
+@keyframes mirrorRightToLeft {
+    0% {
+        transform: scaleX(-1) translateX(-100%); /* Start off-screen to the left */
+    }
+    100% {
+        transform: scaleX(-1) translateX(100vw); /* End off-screen to the right */
+    }
 }
 
-.popup-content {
-  text-align: center;
+@keyframes moveLeftToRight {
+    0% {
+        transform:   translateX(-100%); /* Start off-screen to the left */
+    }
+    100% {
+        transform:   translateX(100vw); /* End off-screen to the right */
+    }
 }
 
-.popup button {
-  margin-top: 10px;
-}
-.Form{
 
-  display: flex;
-  flex-direction: column;
-}
-.Form button {
-  color: white;
-  padding-top: 2px;
-  font-family: 'TopNav',sans-serif;
-  background-color: #EF5C4E;
-  border: 0px;
-  width: 50%;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.Form button:hover {
-  padding-top: 2px;
-  font-family: 'TopNav',sans-serif;
-  background-color: #de4234;
-  border: 0px;
-}
-.popup-content button {
-  color: white;
-  padding-top: 2px;
-  font-family: 'TopNav',sans-serif;
-  background-color: #EF5C4E;
-  border: 0px;
-}
-.popup-content button:hover {
-  color: white;
-  padding-top: 2px;
-  font-family: 'TopNav',sans-serif;
-  background-color: #de4234;
-  border: 0px;
-}
-.contenido{
-  height: 100%;
-  position: fixed;
-  top: 6%;
-  left: 0;
-  width: 100%;
-  font-family: 'TopNav',sans-serif;
-  background-color: #fad8ce;
-  font-size: 25px;
-  box-sizing: border-box;
-  z-index: 1;
-  max-height: 100vh; /* Adjust the height as needed */
-  overflow-y: auto;
-}
   
   

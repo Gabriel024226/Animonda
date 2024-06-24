@@ -5,12 +5,15 @@ import '../Styles/card.css'
 import { RemoveShoppingCart, ShoppingCart } from "@mui/icons-material"
 
 export const Cart = () => {
+  const calcularTotal = () =>{
+    return listaCompras.reduce((total, item) => total + item.price * item.cantidad,0).toFixed(2)
+  }
   const {listaCompras,agregarCompra,aumentarCantidad,disminuirCantidad,eliminarCompra} =
   useContext(CarritoContext)
   return (
     <>
-      <table class="table">
-        <thead class="table-dark">
+      <table className="table">
+        <thead className="table-dark">
         <tr>
             <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
@@ -24,6 +27,14 @@ export const Cart = () => {
               <tr key={item.id}>
             <th scope="row">{item.title}</th>
             <td>{item.price}</td>
+            <td>
+              <button className="btn btn-ouline-primary"
+              onClick={() => disminuirCantidad(item.id)}>-</button>
+              <button className="btn btn-primary">{item.cantidad}</button>
+              <button className="btn btn-ouline-primary"
+              onClick={() => aumentarCantidad(item.id)}>+</button>
+              
+            </td>
             <td><button type="button" className="btn btn-danger"
                 onClick={()=>eliminarCompra(item.id)}>
                   <RemoveShoppingCart />
@@ -32,12 +43,10 @@ export const Cart = () => {
           </tr>
             ))
           }
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
+          <th><b>TOTAL:</b></th>
+          <td> </td>
+          <td>${calcularTotal()}</td>
+          <td> </td>
         </tbody>
       </table>
       <div className='d-grid gap-2'>

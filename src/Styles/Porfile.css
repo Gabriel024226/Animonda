@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'TopNav';
+    src: url('../assets/The Last Shuriken.ttf') format('truetype');
+    src: url('../assets/The Last Shuriken.otf') format('opentype'); /* Specify the path to your .otf file */
+  }
+#divaa3{
+    position:fixed;
+    right: 30px;
+    width:80px;
+    height:5%;
+    border:5px solid #363330;
+    border-radius:100px;
+    background:#363330;
+    transition:.6s;
+    justify-content: right;
+    z-index: 1000;
+  }
+  #divaa3:hover{
+    height:20%;
+  }
+  #divaa3:hover > #divaaa3{
+    height:70%;
+    background:#363330;
+  }
+  #divaa3:hover > #divaaa4{
+    height:80%;
+    background:#363330;
+  }
+  #divaaa3{
+    position:absolute;
+    top:-5px;
+    left:-35px;
+    width:40px;
+    height:5%;
+    border:5px solid #363330;
+    border-radius:100px;
+    background:#363330;
+    transition:.6s;
+    z-index: 100;
+  }
+  #divaaa4{
+    position:absolute;
+    top:-5px;
+    left:70px;
+    width:25px;
+    height:5%;
+    border:5px solid #363330;
+    border-radius:100px;
+    background:#363330;
+    transition:.6s;
+    z-index: 100;
+  }
+  
+  #btnc1{
+    position:absolute;
+    top:0px;
+    background:transparent;
+    width:75px;
+    color:transparent;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family: 'TopNav', sans-serif;
+    font-size:13px;
+    border:2.5px solid transparent;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.6s;
+    z-index: 1000;
+  }
+#divaa3:hover > #btnc1{
+    top:50px;
+    color:white;
+    background:#363330;
+    padding-bottom:5px;
+  }
+  
+  #btnc2{
+    position:absolute;
+    top:0px;
+    background:transparent;
+    width:75px;
+    color:transparent;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family: 'TopNav', sans-serif;
+    font-size:13px;
+    border:2.5px solid transparent;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.6s;
+    z-index: 1000;
+  }
+  #divaa3:hover > #btnc2{
+    top:100px;
+    color:white;
+    background:#363330;
+    padding-bottom:5px;
+  }
+.pfp{
+    position:absolute;
+    top:0px;
+    left:20px;
+    color: white;
+}
+

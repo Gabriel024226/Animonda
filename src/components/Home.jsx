@@ -1,5 +1,11 @@
-import React from 'react';
+import { Reel } from './reel';
 
 export const Home = () => {
-  return <div>Welcome to the Home page</div>;
+  
+
+  return (
+    <>
+    <Reel/>
+    </>
+  );
 };
