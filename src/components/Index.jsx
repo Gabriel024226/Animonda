@@ -23,10 +23,6 @@ export const Index = () => {
     <ProductosProvider>
       <CarritoProvider>
       <TopNav
-        selectedOption={selectedOption}
-        handleOptionClick={handleOptionClick}
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
         toggleLoginPopup={toggleLoginPopup}
         toggleSignupPopup={toggleSignupPopup}
       />

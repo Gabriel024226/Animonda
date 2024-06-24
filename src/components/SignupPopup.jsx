@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+// En App.js o en cualquier otro componente donde hagas llamadas HTTP
+import '../axiosConfig';  // Asegúrate de que la ruta sea correcta
 import '../Styles/Form.css'
 
 export const SignupPopup = ({ togglePopup }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [error, setError] = useState('');  // Estado para manejar los mensajes de error
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -16,32 +20,36 @@ export const SignupPopup = ({ togglePopup }) => {
       });
       console.log('Registro exitoso', response.data);
       localStorage.setItem('token', response.data.token);
+      togglePopup(); // Cerrar el popup solo después de un registro exitoso
     } catch (error) {
       console.error('Error:', error.response ? error.response.data : 'Unknown Error');
+      setError(error.response ? error.response.data.message : 'Ocurrió un error al registrar');
     }
   };
 
+
   return (
-    <div class="login-container">
-        <div class="circle blue"></div>
-        <div class="circle orange"></div>
-        <div class="login-box">
+    <div className="login-container">
+        <div className="circle blue"></div>
+        <div className="circle orange"></div>
+        <div className="login-box">
             <h2>Registrarse</h2>
-            <form>
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Username"></input>
+            {error && <p className="error">{error}</p>}
+            <form className='Form' onSubmit={handleSignup}>
+                <div className="input-group">
+                    <label htmlFor="username">Username</label>
+                    <input type="text" name="username" placeholder='Usuario' value={username} onChange={(e) => setUsername(e.target.value)} />
                 </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Password"></input>
+                <div className="input-group">
+                    <label htmlFor="password">Password</label>
+                    <input type="password" name="password" placeholder='Contraseña' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Email"></input>
+                <div className="input-group">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name="email" placeholder='Correo' value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
-                <button type="submit" onClick={togglePopup}>Registrarse</button>
-                <button type="submit" onClick={togglePopup}>Volver</button>
+                <button type="submit">Registrarse</button>
+                <button type="button" onClick={togglePopup}>Volver</button>
             </form>
         </div>
     </div>

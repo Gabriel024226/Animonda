@@ -38,7 +38,7 @@ export const Reel = () => {
         </div>
         <div className="slide-panel" ref={imageContainerRef}>
           {productos.map((producto, index) => (
-            <img className="homeimg" src={producto.image} alt={`Producto ${index}`} key={index} />
+            <img className="homeimg" src={producto.imagen} alt={`Producto ${index}`} key={index} />
           ))}
         </div>
         <div className="next" onClick={next}>

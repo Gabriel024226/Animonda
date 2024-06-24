@@ -4,8 +4,10 @@ import { ProductosContext } from "../context/ProductosContext";
 import { CarritoContext } from '../context/CarritoContext';
 
 export const Colecciones = () => {
-  const { productos } = useContext(ProductosContext);
+  const { productos, setSearchKeyword } = useContext(ProductosContext);
   const { agregarCompra, eliminarCompra } = useContext(CarritoContext);
+  
+ 
 
   const handleAgregar = (compra) => {
     agregarCompra(compra);
@@ -15,8 +17,19 @@ export const Colecciones = () => {
     eliminarCompra(id);
   }
 
+  const handleSearchChange = (event) => {
+    setSearchKeyword(event.target.value);
+  };
+
   return (
     <main className='carrito'>
+      <input
+        
+        type="text"
+        placeholder="Buscar productos"
+        onChange={handleSearchChange}
+        className="search-input"
+      />
       {productos.map(producto => (
         <Card 
           key={producto.id_producto}

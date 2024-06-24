@@ -4,13 +4,16 @@ import '../Styles/card.css';
 import { RemoveShoppingCart } from "@mui/icons-material";
 
 export const Cart = () => {
-  const calcularTotal = () =>{
-    return listaCompras.reduce((total, item) => total + item.price * item.cantidad,0).toFixed(2)
-  }
-  const {listaCompras,agregarCompra,aumentarCantidad,disminuirCantidad,eliminarCompra} =
-  useContext(CarritoContext)
+  
+  const { listaCompras, aumentarCantidad, disminuirCantidad, eliminarCompra } = useContext(CarritoContext);
+
+  const calcularTotal = () => {
+    return listaCompras.reduce((total, item) => total + item.product.precio * item.quantity, 0).toFixed(2);
+  };
+
   return (
     <>
+    {listaCompras.length > 0 ? (
       <table className="table">
         <thead className="table-dark">
         <tr>
@@ -24,18 +27,20 @@ export const Cart = () => {
           {
             listaCompras.map(item => (
               <tr key={item.id}>
-            <th scope="row">{item.title}</th>
-            <td>{item.price}</td>
+            <th scope="row">{item.product.nombre}</th>
+            <td>{item.product.precio}</td>
             <td>
               <button className="btn btn-ouline-primary"
-              onClick={() => disminuirCantidad(item.id)}>-</button>
-              <button className="btn btn-primary">{item.cantidad}</button>
+              onClick={() => disminuirCantidad(item.product.id_producto)}>-</button>
+              <button className="btn btn-primary">{item.quantity}</button>
               <button className="btn btn-ouline-primary"
-              onClick={() => aumentarCantidad(item.id)}>+</button>
+              onClick={() => aumentarCantidad(item.product.id_producto)}>+</button>
               
             </td>
+
+           
             <td><button type="button" className="btn btn-danger"
-                onClick={()=>eliminarCompra(item.id)}>
+                onClick={()=>eliminarCompra(item.product.id_producto)}>
                   <RemoveShoppingCart />
                 </button>
               </td>
@@ -48,8 +53,11 @@ export const Cart = () => {
           <td> </td>
         </tbody>
       </table>
+      ) : (
+        <p>Tu carrito está vacío.</p>
+      )}
       <div className='d-grid gap-2'>
-        <button className="btn btn-primary">
+        <button className="btn btn-primary" disabled={listaCompras.length === 0}>
           COMPRAR
         </button>
       </div>
