@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Card } from "../components/Card";
 import { ProductosContext } from "../context/ProductosContext";
 import { CarritoContext } from '../context/CarritoContext';
+import '../Styles/card.css';
 
 export const Colecciones = () => {
   const { productos, setSearchKeyword } = useContext(ProductosContext);
@@ -22,7 +23,7 @@ export const Colecciones = () => {
   };
 
   return (
-    <main className='carrito'>
+    <>
       <input
         
         type="text"
@@ -30,6 +31,7 @@ export const Colecciones = () => {
         onChange={handleSearchChange}
         className="search-input"
       />
+      <div className='carrito'>
       {productos.map(producto => (
         <Card 
           key={producto.id_producto}
@@ -41,6 +43,8 @@ export const Colecciones = () => {
           handleQuitar={() => handleQuitar(producto.id_producto)}
         />
       ))}
-    </main>
+    
+      </div>
+    </>
   );
 };

@@ -30,16 +30,16 @@ export const Cart = () => {
             <th scope="row">{item.product.nombre}</th>
             <td>{item.product.precio}</td>
             <td>
-              <button className="btn btn-ouline-primary"
+              <button className="btn"
               onClick={() => disminuirCantidad(item.product.id_producto)}>-</button>
-              <button className="btn btn-primary">{item.quantity}</button>
-              <button className="btn btn-ouline-primary"
+              <button className="quantity">{item.quantity}</button>
+              <button className="btn"
               onClick={() => aumentarCantidad(item.product.id_producto)}>+</button>
               
             </td>
 
            
-            <td><button type="button" className="btn btn-danger"
+            <td><button type="button" className="boton-quitar"
                 onClick={()=>eliminarCompra(item.product.id_producto)}>
                   <RemoveShoppingCart />
                 </button>
@@ -48,16 +48,16 @@ export const Cart = () => {
             ))
           }
           <th><b>TOTAL:</b></th>
-          <td> </td>
-          <td>${calcularTotal()}</td>
-          <td> </td>
+          <th> </th>
+          <th>${calcularTotal()}</th>
+          <th> </th>
         </tbody>
       </table>
       ) : (
         <p>Tu carrito está vacío.</p>
       )}
       <div className='d-grid gap-2'>
-        <button className="btn btn-primary" disabled={listaCompras.length === 0}>
+        <button className="comprar" disabled={listaCompras.length === 0}>
           COMPRAR
         </button>
       </div>

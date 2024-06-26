@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'TopNav';
-    src: url('../assets/The Last Shuriken.ttf') format('truetype');
-    src: url('../assets/The Last Shuriken.otf') format('opentype'); /* Specify the path to your .otf file */
+    src: url('../Assets/The Last Shuriken.ttf') format('truetype');
+    src: url('../Assets/The Last Shuriken.otf') format('opentype'); /* Specify the path to your .otf file */
   }
   nav {
     position: fixed;
@@ -31,6 +31,7 @@
     font-size: large;
     padding: 10px 20px;
     transition: color 0.2s ease;
+    cursor: pointer;
   }
   
   nav .Page:before,
