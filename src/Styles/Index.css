@@ -83,6 +83,14 @@
   nav .Page:nth-child(3):after {
     background-color: palevioletred;
   }
+
+  nav .Page:nth-child(4):before {
+    background-color: yellow;
+  }
+  
+  nav .Page:nth-child(4):after {
+    background-color: red;
+  }
   
   .indicator {
     position: absolute;
@@ -120,6 +128,11 @@
     transform: translateX(175%);
     width: 10%;
     background: linear-gradient(130deg, purple, palevioletred);
+  }
+  nav .Page:nth-child(4):hover ~ .indicator {
+    transform: translateX(310%);
+    width: 9%;
+    background: linear-gradient(130deg, yellow, red);
   }
   
   @media (max-width: 768px) {

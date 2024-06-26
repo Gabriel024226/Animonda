@@ -9,6 +9,7 @@ import { Cart } from './Cart';
 import { Route, Routes } from 'react-router-dom';
 import { ProductosProvider } from "../context/ProductosProvider";
 import { CarritoProvider } from '../context/CarritoProvider';
+
 import '../axiosConfig';  // Asegúrate de que esta configuración se ejecuta para configurar Axios globalmente
 
 export const Index = () => {

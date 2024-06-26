@@ -3,6 +3,7 @@ import '../Styles/Form.css'
 import axios from 'axios';
 import '../axiosConfig';  // Asegúrate de que la ruta sea correcta
 
+
 export const LoginPopup = ({ togglePopup }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
