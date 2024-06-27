@@ -16,7 +16,7 @@
     z-index: 1000;
   }
   #divaa3:hover{
-    height:20%;
+    height:30%;
   }
   #divaa3:hover > #divaaa3{
     height:70%;
@@ -92,6 +92,29 @@
   }
   #divaa3:hover > #btnc2{
     top:100px;
+    color:white;
+    background:#363330;
+    padding-bottom:5px;
+  }
+
+  #btnc3{
+    position:absolute;
+    top:0px;
+    background:transparent;
+    width:75px;
+    color:transparent;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family: 'TopNav', sans-serif;
+    font-size:13px;
+    border:2.5px solid transparent;
+    border-radius:100px;
+    cursor:pointer;
+    transition:.6s;
+    z-index: 1000;
+  }
+  #divaa3:hover > #btnc3{
+    top:150px;
     color:white;
     background:#363330;
     padding-bottom:5px;

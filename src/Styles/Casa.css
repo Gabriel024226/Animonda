@@ -1,0 +1,25 @@
+.Home{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+.der{
+    align-self: right;
+    width: 100%;
+    height: auto;
+}
+.der h1{
+    font-size: larger;
+}
+.der p{
+    font-size: medium;
+}
+.izq{
+    width: 100%;
+    height: auto;
+    align-content: left;
+
+}
+.knw{
+
+}

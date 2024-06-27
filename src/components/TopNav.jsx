@@ -19,12 +19,11 @@ export const TopNav = ({ selectedOption, handleOptionClick, toggleLoginPopup, to
       <NavLink to='/' className="Page">Home</NavLink>
       <NavLink to='/Catalogo' className="Page">Catalogo</NavLink>
       <NavLink to='/Carrito' className="Page">Mi Carro</NavLink>
-      <div className="Page"  onClick={handleLogout}> LogOut</div>
       <div className='indicator'></div>
       <div id="divaa3">
         <input id="btnc1" type="button" value="LogIn"  onClick={toggleLoginPopup}></input>
         <input id="btnc2" type="button" value="SignUp"  onClick={toggleSignupPopup}></input>
-      
+        <input id="btnc3" type="button" value="LogOut" onClick={handleLogout}></input>
         
         <AccountCircle className='pfp'></AccountCircle>
         <div id="divaaa3"></div>
