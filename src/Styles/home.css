@@ -52,75 +52,65 @@
     display: none;
 }
 
-.Home {
-    width: 100%;
-    overflow: auto;
-    margin-bottom: 100px;
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.ini{
-    margin: 30px;
-    width: 100%;
-    height: auto;
-
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
 }
 
-.imgizq{
-    margin-top: -25px;
+.left-image {
     width: 25%;
-    float: left; 
     height: auto;
-    margin-left: 100px;
+    order: 1;
+    margin-right: 20px;
 }
 
-.der {
-    margin-top: 40px;
-    margin-right: 200px;
-    width: 50%; 
-    float: right; 
-    height: auto;
-}
-
-.der h1 {
-    font-size: 40px;
-}
-
-.der p {
-    font-size: larger;
-}
-.izq{
-    margin-top: 40px;
-    margin-left: 150px;
-    width: 50%; 
-    float: left; 
-    height: auto;
-
-}
-.izq h1 {
-    font-size: 40px;
-}
-
-.izq p {
-    font-size: medium;
-}
-
-.imgder{
-    margin-top: -25px;
+.right-image {
     width: 25%;
-    float: right; 
     height: auto;
-    margin-right: 150px;
-
+    order: 2;
+    margin-left: 20px;
 }
 
-.titulin{
-    margin-left: 35%;
-    margin-top: 1200px;
-    width: 50%; 
-    float: center; 
-    height: auto;
+.text-content {
+    flex: 1;
 }
 
-.titulin h1{
-    font-size: 40px;
+.text-content h1 {
+    margin: 0 0 10px 0;
+}
+
+.text-content p {
+    margin: 0;
+}
+
+.row:nth-child(odd) .left-image {
+    order: 1;
+}
+
+.row:nth-child(odd) .text-content {
+    order: 2;
+}
+
+.row:nth-child(even) .right-image {
+    order: 2;
+}
+
+.row:nth-child(even) .text-content {
+    order: 1;
+}
+
+.centered-text {
+    margin-bottom: -100px;
+    font-size: 30px;
+    text-align: center;
+    background-color: transparent; /* Sin fondo */
 }
