@@ -51,3 +51,76 @@
 ::-webkit-scrollbar{
     display: none;
 }
+
+.Home {
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 100px;
+}
+
+.ini{
+    margin: 30px;
+    width: 100%;
+    height: auto;
+
+}
+
+.imgizq{
+    margin-top: -25px;
+    width: 25%;
+    float: left; 
+    height: auto;
+    margin-left: 100px;
+}
+
+.der {
+    margin-top: 40px;
+    margin-right: 200px;
+    width: 50%; 
+    float: right; 
+    height: auto;
+}
+
+.der h1 {
+    font-size: 40px;
+}
+
+.der p {
+    font-size: larger;
+}
+.izq{
+    margin-top: 40px;
+    margin-left: 150px;
+    width: 50%; 
+    float: left; 
+    height: auto;
+
+}
+.izq h1 {
+    font-size: 40px;
+}
+
+.izq p {
+    font-size: medium;
+}
+
+.imgder{
+    margin-top: -25px;
+    width: 25%;
+    float: right; 
+    height: auto;
+    margin-right: 150px;
+
+}
+
+.titulin{
+    margin-left: 35%;
+    margin-top: 1200px;
+    width: 50%; 
+    float: center; 
+    height: auto;
+}
+
+.titulin h1{
+    font-size: 40px;
+}
